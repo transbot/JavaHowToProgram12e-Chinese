@@ -1,5 +1,5 @@
-// Fig. B.1: IntegerConversionTest.java
-// Using the integer conversion characters.
+// 图B.1: IntegerConversionTest.java
+// 使用整数转换字符
 
 public class IntegerConversionTest {
    public static void main(String[] args) {

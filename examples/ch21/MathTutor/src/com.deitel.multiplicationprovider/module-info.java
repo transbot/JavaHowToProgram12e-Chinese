@@ -1,5 +1,5 @@
-// Fig. 21.16: module-info.java
-// Module declaration for the com.deitel.multiplicationprovider module
+// 图21.16: module-info.java
+// com.deitel.multiplicationprovider模块声明
 module com.deitel.multiplicationprovider {
    requires com.deitel.mathtutor;
 

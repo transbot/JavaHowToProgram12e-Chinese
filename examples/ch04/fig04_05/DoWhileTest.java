@@ -1,5 +1,5 @@
-// Fig. 4.5: DoWhileTest.java
-// do...while iteration statement.
+// 图4.5: DoWhileTest.java
+// do...while循环语句
 
 public class DoWhileTest {
    public static void main(String[] args) {

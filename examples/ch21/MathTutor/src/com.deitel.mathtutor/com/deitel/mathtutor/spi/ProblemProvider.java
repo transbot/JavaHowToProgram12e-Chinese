@@ -1,5 +1,5 @@
-// Fig. 21.9: ProblemProvider.java
-// Service-provider interface for obtaining a Problem
+// 图21.9: ProblemProvider.java
+// 获取一个Problem的服务提供者接口
 package com.deitel.mathtutor.spi;
 
 public interface ProblemProvider {

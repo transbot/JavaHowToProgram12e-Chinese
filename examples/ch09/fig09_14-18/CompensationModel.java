@@ -1,5 +1,5 @@
-// Fig. 9.14: CompensationModel.java
-// CompensationModel interface defining method calculateEarnings.
+// 图9.14: CompensationModel.java
+// CompensationModel接口定义了calculateEarnings方法
 import java.math.BigDecimal;
 
 public interface CompensationModel {

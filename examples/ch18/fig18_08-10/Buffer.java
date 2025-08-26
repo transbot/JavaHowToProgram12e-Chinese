@@ -1,12 +1,12 @@
-// Fig. 18.8: Buffer.java
-// Buffer interface specifies methods called by Producer and Consumer.
+// 图18.8: Buffer.java
+// Buffer接口规范了由生产者和消费者调用的方法
 public interface Buffer {
-   // place int value into Buffer
+   // 将int值放入Buffer
    public void blockingPut(int value) throws InterruptedException; 
 
-   // return int value from Buffer
+   // 从Buffer返回int值
    public int blockingGet() throws InterruptedException; 
-} 
+}
 
 
 /**************************************************************************

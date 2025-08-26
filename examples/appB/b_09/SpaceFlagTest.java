@@ -1,5 +1,5 @@
-// Fig. B.9: SpaceFlagTest.java
-// Printing a space before non-negative values.
+// 图B.9: SpaceFlagTest.java
+// 在非负数加打印一个空格
 
 public class SpaceFlagTest { 
    public static void main(String[] args) {

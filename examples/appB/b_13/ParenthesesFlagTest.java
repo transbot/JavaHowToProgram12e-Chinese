@@ -1,5 +1,5 @@
-// Fig. B.13: ParenthesesFlagTest.java
-// Using the ( flag to place parentheses around negative numbers.
+// 图B.13: ParenthesesFlagTest.java
+// 使用(标志将负数放到圆括号中
 
 public class ParenthesesFlagTest {
    public static void main(String[] args) {

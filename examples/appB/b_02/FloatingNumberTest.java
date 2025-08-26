@@ -1,5 +1,5 @@
-// Fig. B.2: FloatingNumberTest.java
-// Using floating-point conversion characters.
+// 图B.2: FloatingNumberTest.java
+// 使用浮点转换字符
 
 public class FloatingNumberTest {
    public static void main(String[] args) {
