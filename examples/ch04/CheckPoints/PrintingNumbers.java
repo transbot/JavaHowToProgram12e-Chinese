@@ -1,4 +1,4 @@
-// Section 4.2 Checkpoint 3: PrintingNumbers.java
+// 4.2节，自测题3: PrintingNumbers.java
 public class PrintingNumbers {
    public static void main(String[] args) {
       int i = 1; 

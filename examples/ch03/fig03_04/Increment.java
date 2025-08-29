@@ -9,7 +9,7 @@ public class Increment {
       System.out.printf("对c进行后缀递增: %d%n", c++); // 打印5
       System.out.printf("后缀递增之后的c: %d%n", c); // 打印6  
 
-      System.out.println(); // skip a line
+      System.out.println(); // 跳过一行
 
       // 演示前缀递增操作符
       c = 5; 

@@ -1,16 +1,16 @@
-// Section 3.7, Checkpoint 2: Calculate.java
-// Calculate the sum of the integers from 1 to 10 
+// 3.7节，自测题2: Calculate.java
+// 计算整数1～10之和
 public class Calculate {
    public static void main(String[] args) {
       int sum = 0;
       int x = 1;
 
-      while (x <= 10) { // while x is less than or equal to 10
-         sum = sum + x; // add x into sum
-         x = x + 1; // increment x
+      while (x <= 10) { // 当x小于或等于10时
+         sum = sum + x; // 将x加到sum上
+         x = x + 1;     // x递增1
       } 
 
-      System.out.printf("The sum is: %d%n", sum);
+      System.out.printf("1～10之和是: %d%n", sum);
    } 
 } 
 

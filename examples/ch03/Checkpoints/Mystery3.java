@@ -1,29 +1,21 @@
-// 3.8节, 生成式AI练习: OddOrEven.java
-// 判断输入的整数是奇数还是偶数
-import java.util.Scanner;
-
-public class OddOrEven {
+// 练习3.10: Mystery3.java
+public class Mystery3 {
    public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
-      int counter = 1;
+      int row = 10;
 
-      while (counter <= 3) {
-         System.out.print("输入一个整数: ");
-         int number = input.nextInt();
+      while (row >= 1) {
+         int column = 1;
 
-         if (number % 2 == 0) {
-            System.out.printf("%d是偶数%n", number);
-         } 
-         else {
-            System.out.printf("%d是奇数%n", number);
+         while (column <= 10) {
+            System.out.print(row % 2 == 1 ? "<" : ">");
+            ++column;
          }
 
-         counter = counter + 1;
+         --row;
+         System.out.println();
       }
    }
 }
-
-
 
 /**************************************************************************
  * (C) Copyright 1992-2025 by Deitel & Associates, Inc. and               *

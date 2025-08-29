@@ -1,4 +1,4 @@
-// Section 3.12, Checkpoint 3: Mystery.java
+// 3.12节, 自测题3: Mystery.java
 public class Mystery {
    public static void main(String[] args) {
       int x = 1;
@@ -11,7 +11,7 @@ public class Mystery {
          ++x;
       } 
 
-      System.out.printf("Total is %d%n", total);
+      System.out.printf("总和为%d%n", total);
    } 
 } 
 

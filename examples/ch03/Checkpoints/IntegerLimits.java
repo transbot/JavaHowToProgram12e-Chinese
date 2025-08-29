@@ -1,4 +1,4 @@
-// 3.11节, IntegerLimits.java
+// 3.13节, 生成式AI练习，IntegerLimits.java
 // 显示Java基元整型的最小值和最大值
 public class IntegerLimits {
     public static void main(String[] args) {

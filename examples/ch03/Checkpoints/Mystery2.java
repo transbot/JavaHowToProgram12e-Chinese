@@ -1,21 +1,14 @@
-// Section 3.7, Checkpoint 2: Calculate.java
-// Calculate the sum of the integers from 1 to 10 
-public class Calculate {
+// 练习3.9: Mystery2.java
+public class Mystery2 {
    public static void main(String[] args) {
-      int sum = 0;
-      int x = 1;
+      int count = 1;
 
-      while (x <= 10) { // while x is less than or equal to 10
-         sum = sum + x; // add x into sum
-         x = x + 1; // increment x
-      } 
-
-      System.out.printf("The sum is: %d%n", sum);
-   } 
-} 
-
-
-
+      while (count <= 10) {
+         System.out.println(count % 2 == 1 ? "****" : "++++++++");
+         ++count;
+      }
+   }
+}
 
 
 /**************************************************************************
