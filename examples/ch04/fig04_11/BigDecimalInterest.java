@@ -1,26 +1,26 @@
-// Fig. 4.11: BigDecimalInterest.java
-// Compound-interest example with BigDecimal objects.
+// 图4.11: BigDecimalInterest.java
+// 使用BigDecimal对象进行复利计算
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class BigDecimalInterest {
    public static void main(String[] args) {
-      // create BigDecimal objects from strings
-      BigDecimal principal = new BigDecimal("1000.00"); 
-      BigDecimal rate = new BigDecimal("0.05"); 
+      // 从字符串创建BigDecimal对象
+      BigDecimal principal = new BigDecimal("1000.00");  // 本金
+      BigDecimal rate = new BigDecimal("0.05");  // 利率
 
-      System.out.printf("Initial principal: %7s%n", principal);
-      System.out.printf("    Interest rate: %7s%n%n", rate);
+      System.out.printf("本金: %7s%n", principal);
+      System.out.printf("利率: %7s%n%n", rate);
 
-      // display headers
-      System.out.printf("%s%17s   %s%n", 
-         "Year", "Rounded Amount", "Precise Stored Amount");
+      // 显示列标题
+      System.out.printf("%s%16s   %s%n", 
+         "年份", "舍入后的金额", "精确的存储值");
 
-      // calculate amount on deposit for each of 10 years
+      // 计算未来10年的每年存款总额
       for (int year = 1; year <= 10; ++year) {
          BigDecimal amount = principal.multiply(
             BigDecimal.ONE.add(rate).pow(year));
-         System.out.printf("%4d%17s   %s%n", year,
+         System.out.printf("%4d%17s        %s%n", year,
             amount.setScale(2, RoundingMode.HALF_EVEN), amount);
       }
    }
