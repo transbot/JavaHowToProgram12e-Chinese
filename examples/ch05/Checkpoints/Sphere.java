@@ -1,23 +1,24 @@
-// Section 5.2, Checkpoint 3: Sphere.java
-// Calculate the volume of a sphere.
+// 5.2节，自测题3：Sphere.java
+// 计算球体的体积
 import java.util.Scanner;
 
 public class Sphere {
-   // obtain radius from user and display volume of sphere
+   // 从用户获取半径并显示球体的体积
    public static void main(String[] args) {
       var input = new Scanner(System.in);
 
-      System.out.print("Enter radius of sphere: ");
+      System.out.print("输入球体半径: ");
       double radius = input.nextDouble();
 
-      System.out.printf("Volume is %f%n", sphereVolume(radius));
-   } 
+      System.out.printf("体积为%f%n", sphereVolume(radius));
+   }
 
-   // calculate and return sphere volume
+   // 计算并返回球体体积
    public static double sphereVolume(double radius) {
       return (4.0 / 3.0) * Math.PI * Math.pow(radius, 3);
-   } 
+   }
 }
+
 
 
 
