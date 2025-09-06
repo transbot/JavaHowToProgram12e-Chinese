@@ -1,22 +1,22 @@
-// Section 6.18, Checkpoint 3: Sum.java
-// Totaling command-line arguments.
+// 6.18节，自测题3: Sum.java
+// 求整数命令行参数之和
 public class Sum {
    public static void main(String[] args) {
-      // check if any command-line arguments were provided
+      // 判断是否提供了命令行参数
       if (args.length == 0) {
          System.out.println(
-            "Provide some integer command-line arguments.");
+            "请提供一些整数命令行参数，以空格分隔");
          return;
       }
 
       int sum = 0;
 
-      // compute the sum of the command-line arguments
+      // 计算命令行参数之和
       for (String arg : args) {
          sum += Integer.parseInt(arg);
       }
 
-      System.out.printf("Sum is: %d%n", sum); // display the sum
+      System.out.printf("总和为: %d%n", sum); // 显示总和
    }
 }
 

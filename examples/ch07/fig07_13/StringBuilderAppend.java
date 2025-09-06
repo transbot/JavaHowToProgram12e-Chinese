@@ -13,7 +13,7 @@ public class StringBuilderAppend {
       float floatValue = 2.5f; 
       double doubleValue = 33.333;
 
-      var lastBuffer = new StringBuilder("buffer中最后的内容");
+      var lastBuffer = new StringBuilder("我是buffer中最后的内容");
       var buffer = new StringBuilder();
 
       buffer.append(objectRef)                           

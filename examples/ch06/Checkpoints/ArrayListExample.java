@@ -1,26 +1,26 @@
-// Section 6.20, Checkpoint 3: ArrayListExample.java
-// ArrayList with integers.
+// 6.20节，自测题3：ArrayListExample.java
+// 包含整数元素的ArrayList
 import java.util.ArrayList;
 
 public class ArrayListExample {
    public static void main(String[] args) {
       var list = new ArrayList<Integer>();
 
-      // add 1-5 to the ArrayList
+      // 向ArrayList添加整数1~5
       for (int i = 1; i <= 5; ++i) {
-         list.add(i); // auto-boxes the ints 
+         list.add(i); // 自动装箱int
       }
 
-      System.out.printf("list contains: %s%n", list); 
+      System.out.printf("list中包含: %s%n", list); 
 
-      // total the list's elements
+      // 计算列表元素总和
       int total = 0;
 
-      for (int value : list) { // auto-unboxes the Integers
+      for (int value : list) { // 自动拆箱Integer对象
          total += value;
       }
 
-      System.out.printf("sum of list's elements: %d%n", total);
+      System.out.printf("list中所有元素之和为: %d%n", total);
    }
 }
 
