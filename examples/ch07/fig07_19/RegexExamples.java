@@ -44,7 +44,7 @@ public class RegexExamples {
          "123".matches("\\d{3,}"), "1234567890".matches("\\d{3,}"),
          "12".matches("\\d{3,}"));
 
-      // 匹配子表达式出现n到m次(包含3~6次)
+      // 匹配子表达式出现n到m次(3~6次)
       System.out.println("匹配模式：\\d{3,6}");
       System.out.printf("123: %b; 123456: %b; 1234567: %b; 12: %b%n",
          "123".matches("\\d{3,6}"), "123456".matches("\\d{3,6}"),

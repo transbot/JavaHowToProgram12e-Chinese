@@ -1,4 +1,4 @@
-// 6.10节, 自测题1: CoinFlipper.java
+// 6.10节, 生成式AI练习: CoinFlipper.java
 // 统计抛硬币结果
 import java.util.random.RandomGenerator;
 
