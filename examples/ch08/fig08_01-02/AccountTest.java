@@ -1,29 +1,29 @@
-// Fig. 8.2: AccountTest.java
-// Creating and manipulating an Account object.
+// 图8.2: AccountTest.java
+// 创建并操作Account对象
 import java.util.Scanner; 
 
 public class AccountTest {
    public static void main(String[] args) {
-      // create a Scanner to obtain input from the user 
+      // 创建Scanner对象以获取用户输入
       var input = new Scanner(System.in);
 
-      // create an Account object and assign it to myAccount         
+      // 新建一个Account对象，并将对它的引用赋给myAccount变量
       var myAccount = new Account();                    
 
-      // display initial value of name (null)
-      System.out.printf("Initial name is: %s%n%n", myAccount.getName());
+      // 显示初始name值（null）
+      System.out.printf("初始姓名为：%s%n%n", myAccount.getName());
 
-      // prompt for and read name
-      System.out.println("Please enter the name:");
-      String theName = input.nextLine(); // read a line of text       
-      myAccount.setName(theName); // put theName in myAccount  
-      System.out.println(); // outputs a blank line
+      // 提示用户输入姓名并读取
+      System.out.println("请输入姓名：");
+      String theName = input.nextLine(); // 读取一行文本
+      myAccount.setName(theName);        // 将theName存入myAccount对象
+      System.out.println();              // 输出空行
 
-      // display the name stored in object myAccount
-      System.out.printf("Name in object myAccount is:%n%s%n",
+      // 显示存储在myAccount对象中的姓名
+      System.out.printf("myAccount对象中的姓名是：%n%s%n",
          myAccount.getName());
    } 
-} 
+}
 
 
 /**************************************************************************
