@@ -1,0 +1,11 @@
+500 rem 任务e: 输入10个整数并打印其中最小的整数
+510 input min
+520 let count = 1
+530 if count >= 10 goto 580
+540 input num
+550 if num >= min goto 570
+560 let min = num
+570 let count = count + 1
+580 if count < 10 goto 540
+590 print min
+600 end

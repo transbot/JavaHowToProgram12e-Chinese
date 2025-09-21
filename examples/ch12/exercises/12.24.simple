@@ -1,0 +1,101 @@
+1 rem 练习12.24  
+2 rem 该Simple程序完成以下任务：
+3 rem a) 输入三个整数，求它们的平均值并打印结果；
+4 rem b) 使用哨兵控制的循环输入10个整数，计算并打印它们之和；
+5 rem c) 使用计数器控制的循环输入7个整数——一些是正数，一些是负数——计算并打印它们的平均值；
+6 rem d) 输入一系列整数，判断并打印其中最大的整数。输入的第一个整数指示应处理多少个数字；
+7 rem e) 输入10个整数并打印其中最小的整数；
+8 rem f) 计算并打印2～30的偶整数之和；
+9 rem g) 计算并打印1～9的奇整数之积。
+
+
+10 rem 主程序开始
+15 rem 选择要执行的任务
+20 input t
+30 if t == 1 goto 100
+40 if t == 2 goto 200
+50 if t == 3 goto 300
+60 if t == 4 goto 400
+70 if t == 5 goto 500
+80 if t == 6 goto 600
+90 if t == 7 goto 700
+99 end
+
+100 rem 任务a: 输入三个整数，求平均值
+110 input a
+120 input b
+130 input c
+140 let s = a + b + c
+150 let avg = s / 3
+160 print avg
+170 goto 99
+
+200 rem 任务b: 使用哨兵控制的循环输入10个整数，计算并打印它们之和
+210 let count = 0
+220 let sum = 0
+230 input num
+240 if num == -9999 goto 290
+250 let sum = sum + num
+260 let count = count + 1
+270 if count < 10 goto 230
+280 print sum
+285 goto 99
+290 if count == 0 goto 99
+295 print sum
+297 goto 99
+
+300 rem 任务c: 使用计数器控制的循环输入7个整数，计算并打印平均值
+310 let count = 0
+320 let sum = 0
+330 input num
+340 let sum = sum + num
+350 let count = count + 1
+360 if count < 7 goto 330
+370 let avg = sum / 7
+380 print avg
+390 goto 99
+
+400 rem 任务d: 输入一系列整数，判断并打印其中最大的整数
+410 input n
+420 input max
+430 let count = 1
+440 if count >= n goto 490
+450 input num
+460 if num <= max goto 480
+470 let max = num
+480 let count = count + 1
+490 if count < n goto 450
+500 print max
+510 goto 99
+
+500 rem 任务e: 输入10个整数并打印其中最小的整数
+510 input min
+520 let count = 1
+530 if count >= 10 goto 580
+540 input num
+550 if num >= min goto 570
+560 let min = num
+570 let count = count + 1
+580 if count < 10 goto 540
+590 print min
+600 goto 99
+
+600 rem 任务f: 计算并打印2～30的偶整数之和
+610 let sum = 0
+620 let i = 2
+630 if i > 30 goto 670
+640 let sum = sum + i
+650 let i = i + 2
+660 goto 630
+670 print sum
+680 goto 99
+
+700 rem 任务g: 计算并打印1～9的奇整数之积
+710 let product = 1
+720 let i = 1
+730 if i > 9 goto 770
+740 let product = product * i
+750 let i = i + 2
+760 goto 730
+770 print product
+780 goto 99

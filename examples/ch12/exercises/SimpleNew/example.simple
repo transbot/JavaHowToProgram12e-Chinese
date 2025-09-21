@@ -1,0 +1,13 @@
+5 rem 输入x
+10 input x
+15 rem 检查y == x
+20 if y == x goto 60
+25 rem 递增y
+30 let y = y + 1
+35 rem 在total上累加y
+40 let t = t + y
+45 rem 重复y == x测试
+50 goto 20
+55 rem 输出结果
+60 print t
+99 end
