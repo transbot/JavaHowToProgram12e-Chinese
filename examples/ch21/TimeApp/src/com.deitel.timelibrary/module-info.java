@@ -1,4 +1,4 @@
-// 图21.12: module-info.java
+// 图21.4: module-info.java
 // com.deitel.timelibrary模块声明
 module com.deitel.timelibrary {
    exports com.deitel.timelibrary; // 其他模块可以使用这个包

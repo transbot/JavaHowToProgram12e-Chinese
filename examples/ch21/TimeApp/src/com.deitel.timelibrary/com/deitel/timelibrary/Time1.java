@@ -1,4 +1,4 @@
-// 图21.11: Time1.java
+// 图21.3: Time1.java
 // 将放置到模块中的Time1类
 package com.deitel.timelibrary;
 

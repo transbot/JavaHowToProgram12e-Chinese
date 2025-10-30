@@ -2,79 +2,77 @@
 WelcomeApp
 ===========================================================
 
-// Windows Command Prompt: Compiling the WelcomeApp 
+// Windows 命令提示符：编译 WelcomeApp
 javac -d mods\com.deitel.welcome ^
    src\com.deitel.welcome\module-info.java ^
    src\com.deitel.welcome\com\deitel\welcome\Welcome.java
 
-// Windows PowerShell: Compiling the WelcomeApp 
+// Windows PowerShell：编译 WelcomeApp
 javac -d mods/com.deitel.welcome `
    src\com.deitel.welcome\module-info.java `
    src\com.deitel.welcome\com\deitel\welcome\Welcome.java
 
-// macOS: Compiling the WelcomeApp 
+// macOS：编译 WelcomeApp
 javac -d mods/com.deitel.welcome \
    src/com.deitel.welcome/module-info.java \
    src/com.deitel.welcome/com/deitel/welcome/Welcome.java
 
-// All platforms: Describing the com.deitel.welcome module
+// 所有平台：描述 com.deitel.welcome 模块
 java --module-path mods --describe-module com.deitel.welcome
 
-// Windows Command Prompt: Running the WelcomeApp 
+// Windows 命令提示符：运行 WelcomeApp
 java --module-path mods ^
    --module com.deitel.welcome/com.deitel.welcome.Welcome
 
-// Windows PowerShell: Running the WelcomeApp 
+// Windows PowerShell：运行 WelcomeApp
 java --module-path mods `
    --module com.deitel.welcome/com.deitel.welcome.Welcome
 
-// macOS: Running the WelcomeApp 
+// macOS：运行 WelcomeApp
 java --module-path mods \
    --module com.deitel.welcome/com.deitel.welcome.Welcome
 
-// Windows Command Prompt: Packaging the WelcomeApp's module in a JAR file 
+// Windows 命令提示符：将 WelcomeApp 模块打包为 JAR 文件
 jar --create --file jars\com.deitel.welcome.jar ^
    --main-class com.deitel.welcome.Welcome ^
    -C mods\com.deitel.welcome .
 
-// Windows PowerShell: Packaging the WelcomeApp's module in a JAR file 
+// Windows PowerShell：将 WelcomeApp 模块打包为 JAR 文件
 jar --create --file jars\com.deitel.welcome.jar `
    --main-class com.deitel.welcome.Welcome `
    -C mods\com.deitel.welcome .
 
-// macOS: Packaging the WelcomeApp's module in a JAR file 
+// macOS：将 WelcomeApp 模块打包为 JAR 文件
 jar --create --file jars/com.deitel.welcome.jar \
    --main-class com.deitel.welcome.Welcome \
    -C mods/com.deitel.welcome .
 
-// Windows Command Prompt: Shortened packaging of the WelcomeApp's module in a JAR file 
+// Windows 命令提示符：简化版打包 WelcomeApp 模块为 JAR 文件
 jar -cfe jars\com.deitel.welcome.jar ^
    com.deitel.welcome.Welcome ^
    -C mods\com.deitel.welcome .
 
-// Windows PowerShell: Shortened packaging of the WelcomeApp's module in a JAR file 
+// Windows PowerShell：简化版打包 WelcomeApp 模块为 JAR 文件
 jar -cfe jars\com.deitel.welcome.jar `
    com.deitel.welcome.Welcome `
    -C mods\com.deitel.welcome .
 
-// macOS: Shortened packaging of the WelcomeApp's module in a JAR file 
+// macOS：简化版打包 WelcomeApp 模块为 JAR 文件
 jar -cfe jars/com.deitel.welcome.jar \
    com.deitel.welcome.Welcome \
    -C mods/com.deitel.welcome .
 
-// All platforms: Running the WelcomeApp from a Modular JAR file
-// if you specified the entry point
+// 所有平台：从模块化 JAR 文件运行 WelcomeApp（如果已指定入口点）
 java --module-path jars -m com.deitel.welcome
 
-or
+或
 
 java -p jars -m com.deitel.welcome
 
-// All platforms: Running the WelcomeApp from a Modular JAR file
-// if you DID NOT specify the entry point
+// 所有平台：从模块化 JAR 文件运行 WelcomeApp（如果未指定入口点）
 java --module-path jars -m com.deitel.welcome/com.deitel.welcome.Welcome
 
-or
+或
 
 java -p jars -m com.deitel.welcome/com.deitel.welcome.Welcome
 
@@ -82,7 +80,7 @@ java -p jars -m com.deitel.welcome/com.deitel.welcome.Welcome
 ===========================================================
 TimeApp
 ===========================================================
-// Windows Command Prompt: Compiling the TimeApp 
+// Windows 命令提示符：编译 TimeApp
 javac -d mods\com.deitel.timelibrary ^
    src\com.deitel.timelibrary\module-info.java ^
    src\com.deitel.timelibrary\com\deitel\timelibrary\Time1.java
@@ -91,7 +89,7 @@ javac --module-path mods -d mods\com.deitel.timetest ^
    src\com.deitel.timetest\module-info.java ^
    src\com.deitel.timetest\com\deitel\timetest\Time1Test.java
 
-// Windows PowerShell: Compiling the TimeApp 
+// Windows PowerShell：编译 TimeApp
 javac -d mods\com.deitel.timelibrary `
    src\com.deitel.timelibrary\module-info.java `
    src\com.deitel.timelibrary\com\deitel\timelibrary\Time1.java
@@ -100,7 +98,7 @@ javac --module-path mods -d mods\com.deitel.timetest `
    src\com.deitel.timetest\module-info.java `
    src\com.deitel.timetest\com\deitel\timetest\Time1Test.java
 
-// macOS: Compiling the TimeApp 
+// macOS：编译 TimeApp
 javac -d mods/com.deitel.timelibrary \
    src/com.deitel.timelibrary/module-info.java \
    src/com.deitel.timelibrary/com/deitel/timelibrary/Time1.java
@@ -109,19 +107,19 @@ javac --module-path mods -d mods/com.deitel.timetest \
    src/com.deitel.timetest/module-info.java \
    src/com.deitel.timetest/com/deitel/timetest/Time1Test.java
 
-// Windows Command Prompt: Running the TimeApp Example
+// Windows 命令提示符：运行 TimeApp 示例
 java --module-path mods ^
    -m com.deitel.timetest/com.deitel.timetest.Time1Test
 
-// Windows PowerShell: Running the TimeApp Example
+// Windows PowerShell：运行 TimeApp 示例
 java --module-path mods `
    -m com.deitel.timetest/com.deitel.timetest.Time1Test
 
-// macOS: Running the TimeApp Example
+// macOS：运行 TimeApp 示例
 java --module-path mods \
    -m com.deitel.timetest/com.deitel.timetest.Time1Test
 
-// Windows Command Prompt: Packaging the TimeApp's modules JAR files
+// Windows 命令提示符：打包 TimeApp 模块为 JAR 文件
 jar --create -f jars\com.deitel.timelibrary.jar ^
    -C mods\com.deitel.timelibrary .
 
@@ -129,7 +127,7 @@ jar --create -f jars\com.deitel.timetest.jar ^
    --main-class com.deitel.timetest.Time1Test ^
    -C mods\com.deitel.timetest .
 
-// Windows PowerShell: Packaging the WelcomeApp's module in a JAR file 
+// Windows PowerShell：打包 TimeApp 模块为 JAR 文件
 jar --create -f jars\com.deitel.timelibrary.jar `
    -C mods\com.deitel.timelibrary .
 
@@ -137,7 +135,7 @@ jar --create -f jars\com.deitel.timetest.jar `
    --main-class com.deitel.timetest.Time1Test `
    -C mods\com.deitel.timetest .
 
-// macOS: Packaging the WelcomeApp's module in a JAR file 
+// macOS：打包 TimeApp 模块为 JAR 文件
 jar --create -f jars/com.deitel.timelibrary.jar \
    -C mods/com.deitel.timelibrary .
 
@@ -145,14 +143,14 @@ jar --create -f jars/com.deitel.timetest.jar \
    --main-class com.deitel.timetest.Time1Test \
    -C mods/com.deitel.timetest .
 
-// All platforms: Running the TimeApp from the JAR files
+// 所有平台：从 JAR 文件运行 TimeApp
 java --module-path jars -m com.deitel.timetest
 
 
 ===========================================================
 CircularDependency
 ===========================================================
-// Windows Command Prompt: Compiling the CircularDependency example to show errors
+// Windows 命令提示符：编译 CircularDependency 示例以显示错误
 javac --module-source-path src ^
    --module-path mods -d mods ^
    src\module1\module-info.java ^
@@ -160,7 +158,7 @@ javac --module-source-path src ^
    src\module2\module-info.java ^
    src\module2\package2\Class2.java
 
-// Windows PowerShell: Compiling the CircularDependency example to show errors
+// Windows PowerShell：编译 CircularDependency 示例以显示错误
 javac --module-source-path src `
    --module-path mods -d mods `
    src\module1\module-info.java `
@@ -168,7 +166,7 @@ javac --module-source-path src `
    src\module2\module-info.java `
    src\module2\package2\Class2.java
 
-// macOS: Compiling the CircularDependency example to show errors
+// macOS：编译 CircularDependency 示例以显示错误
 javac --module-source-path src \
    --module-path mods -d mods \
    src/module1/module-info.java \
@@ -179,42 +177,42 @@ javac --module-source-path src \
 ===========================================================
 VideoPlayer
 ===========================================================
-// Windows Command Prompt: Compiling the VideoPlayer 
+// Windows 命令提示符：编译 VideoPlayer
 javac --module-path "%PATH_TO_FX%;mods" ^
    -d mods\com.deitel.videoplayer ^
    src\com.deitel.videoplayer\module-info.java ^
    src\com.deitel.videoplayer\com\deitel\videoplayer\*.java
 
-// Windows PowerShell: Compiling the VideoPlayer 
+// Windows PowerShell：编译 VideoPlayer
 javac --module-path "$env:PATH_TO_FX;mods" `
    -d mods\com.deitel.videoplayer `
    src\com.deitel.videoplayer\module-info.java `
    src\com.deitel.videoplayer\com\deitel\videoplayer\*.java
 
-// macOS: Compiling the VideoPlayer 
+// macOS：编译 VideoPlayer
 javac --module-path "$PATH_TO_FX:mods" \
    -d mods/com.deitel.videoplayer \
    src/com.deitel.videoplayer/module-info.java \
    src/com.deitel.videoplayer/com/deitel/videoplayer/*.java 
 
-// Windows Command Prompt: Running the VideoPlayer 
+// Windows 命令提示符：运行 VideoPlayer
 java --module-path "%PATH_TO_FX%;mods" ^
    -m com.deitel.videoplayer/com.deitel.videoplayer.VideoPlayer
 
-// Windows PowerShell: Running the VideoPlayer 
+// Windows PowerShell：运行 VideoPlayer
 java --module-path "$env:PATH_TO_FX;mods" `
    -m com.deitel.videoplayer/com.deitel.videoplayer.VideoPlayer
 
-// macOS: Running the VideoPlayer 
+// macOS：运行 VideoPlayer
 java --module-path "$PATH_TO_FX:mods" \
    -m com.deitel.videoplayer/com.deitel.videoplayer.VideoPlayer
 
 
 
 ===========================================================
-Custom Runtime Containing Only java.base 
+仅包含 java.base 的自定义运行时
 ===========================================================
-// Windows Command Prompt
+// Windows 命令提示符
 jlink --module-path "%JAVA_HOME%\jmods" --add-modules java.base ^
    --output javabaseruntime
 
@@ -228,9 +226,9 @@ jlink --module-path "$JAVA_HOME/jmods" --add-modules java.base \
 
 
 ===========================================================
-Executing the Welcome App Using javabaseruntime
+使用 javabaseruntime 执行 Welcome 应用
 ===========================================================
-// Windows Command Prompt
+// Windows 命令提示符
 javabaseruntime\bin\java --module-path mods ^
    --module com.deitel.welcome/com.deitel.welcome.Welcome
 
@@ -244,23 +242,7 @@ javabaseruntime/bin/java --module-path mods \
 
 
 ===========================================================
-Executing the Welcome App Using javabaseruntime
-===========================================================
-// Windows Command Prompt
-javabaseruntime\bin\java --module-path mods ^
-   --module com.deitel.welcome/com.deitel.welcome.Welcome
-
-// Windows PowerShell
-javabaseruntime/bin/java --module-path mods `
-   --module com.deitel.welcome/com.deitel.welcome.Welcome
-
-// macOS
-javabaseruntime/bin/java --module-path mods \
-   --module com.deitel.welcome/com.deitel.welcome.Welcome
-
-
-===========================================================
-Listing the Modules in javabaseruntime
+列出 javabaseruntime 中的模块
 ===========================================================
 // Windows 
 javabaseruntime\bin\java --list-modules
@@ -270,9 +252,9 @@ javabaseruntime/bin/java --list-modules
 
 
 ===========================================================
-Custom runtime that includes the Welcome app's code
+包含 Welcome 应用代码的自定义运行时
 ===========================================================
-// Windows Command Prompt
+// Windows 命令提示符
 jlink --module-path "jars;%JAVA_HOME%\jmods" ^
    --add-modules com.deitel.welcome --output welcomeruntime
 
@@ -286,9 +268,9 @@ jlink --module-path "jars:$JAVA_HOME/jmods" \
 
 
 ===========================================================
-Compiling the MathTutor
+编译 MathTutor
 ===========================================================
-// Windows Command Prompt
+// Windows 命令提示符
 javac -d mods\com.deitel.mathtutor ^
    src\com.deitel.mathtutor\module-info.java ^
    src\com.deitel.mathtutor\com\deitel\mathtutor\MathTutor.java ^
@@ -307,9 +289,9 @@ javac -d mods/com.deitel.mathtutor \
    src/com.deitel.mathtutor/com/deitel/mathtutor/spi/*.java
 
 ===========================================================
-Running the MathTutor
+运行 MathTutor
 ===========================================================
-// Windows Command Prompt 
+// Windows 命令提示符 
 java --module-path mods\com.deitel.mathtutor ^
    -m com.deitel.mathtutor/com.deitel.mathtutor.MathTutor
 
@@ -322,9 +304,9 @@ java --module-path mods/com.deitel.mathtutor \
    -m com.deitel.mathtutor/com.deitel.mathtutor.MathTutor
 
 ===========================================================
-Compiling the AdditionProblemProvider 
+编译 AdditionProblemProvider 
 ===========================================================
-// Windows Command Prompt
+// Windows 命令提示符
 javac --module-path mods -d mods\com.deitel.additionprovider ^
    src\com.deitel.additionprovider\module-info.java ^
    src\com.deitel.additionprovider\com\deitel\additionprovider\^
@@ -343,9 +325,9 @@ javac --module-path mods -d mods/com.deitel.additionprovider \
 AdditionProblemProvider.java
 
 ===========================================================
-Running the MathTutor with Providers
+使用提供者运行 MathTutor
 ===========================================================
-// Windows Command Prompt 
+// Windows 命令提示符 
 java --module-path mods ^
    -m com.deitel.mathtutor/com.deitel.mathtutor.MathTutor
 
@@ -358,23 +340,23 @@ java --module-path mods \
    -m com.deitel.mathtutor/com.deitel.mathtutor.MathTutor
 
 ===========================================================
-Compiling the MultiplicationProblemProvider 
+编译 MultiplicationProblemProvider 
 ===========================================================
-// Windows Command Prompt
+// Windows 命令提示符
 javac --module-path mods ^
    -d mods\com.deitel.multiplicationprovider ^
    src\com.deitel.multiplicationprovider\module-info.java ^
    src\com.deitel.multiplicationprovider\com\deitel\^
 multiplicationprovider\MultiplicationProblemProvider.java
 
-// Windows PowerShell: Compiling the MultiplicationProblemProvider 
+// Windows PowerShell：编译 MultiplicationProblemProvider 
 javac --module-path mods `
    -d mods\com.deitel.multiplicationprovider `
    src\com.deitel.multiplicationprovider\module-info.java `
    src\com.deitel.multiplicationprovider\com\deitel\`
 multiplicationprovider\MultiplicationProblemProvider.java
 
-// macOS: Compiling the MultiplicationProblemProvider 
+// macOS：编译 MultiplicationProblemProvider 
 javac --module-path mods \
    -d mods/com.deitel.multiplicationprovider \
    src/com.deitel.multiplicationprovider/module-info.java \
@@ -382,9 +364,9 @@ javac --module-path mods \
 multiplicationprovider/MultiplicationProblemProvider.java
 
 ===========================================================
-JDEPS COMMANDS FOR PRODUCING .dot FILES 
-Executed from the folder containing the "jars" folder.
-Places .dot files in the current folder (.).
+用于生成 .dot 文件的 JDEPS 命令
+从包含 "jars" 文件夹的目录执行
+将 .dot 文件放置在当前文件夹 (.) 中
 ===========================================================
 WelcomeApp: 
 jdeps --dot-output . jars/com.deitel.welcome.jar 
@@ -392,7 +374,7 @@ jdeps --dot-output . jars/com.deitel.welcome.jar
 TimeApp:
 jdeps --module-path mods --dot-output . jars/com.deitel.timetest.jar 
 
-VideoPlayer (Windows Command Prompt): 
+VideoPlayer (Windows 命令提示符): 
 jdeps --module-path "%PATH_TO_FX%";mods --dot-output . ^
    --recursive --module com.deitel.videoplayer
  
@@ -406,10 +388,10 @@ jdeps --module-path "$PATH_TO_FX":mods --dot-output . \
 
 
 ===========================================================
-GRAPHVIZ COMMANDS FOR PRODUCING MODULE GRAPHS
-Executed from the folder containing the .dot file.
+用于生成模块图的 GRAPHVIZ 命令
+从包含 .dot 文件的文件夹执行
 ===========================================================
-WelcomeApp: Windows Command Prompt
+WelcomeApp: Windows 命令提示符
 dot -Tpng summary.dot -Gdpi=600 -Nfontname="Open Sans" ^
    -Nshape=box -o WelcomeApp.png
 
@@ -422,7 +404,7 @@ dot -Tpng summary.dot -Gdpi=600 -Nfontname="Open Sans" \
    -Nshape=box -o WelcomeApp.png
 
 
-TimeApp: Windows Command Prompt
+TimeApp: Windows 命令提示符
 dot -Tpng summary.dot -Gdpi=600 -Nfontname="Open Sans" ^
    -Nshape=box -o TimeApp.png
 
@@ -435,7 +417,7 @@ dot -Tpng summary.dot -Gdpi=600 -Nfontname="Open Sans" \
    -Nshape=box -o TimeApp.png
 
 
-VideoPlayer: Windows Command Prompt
+VideoPlayer: Windows 命令提示符
 dot -Tpng summary.dot -Gdpi=600 -Nfontname="Open Sans" ^
    -Nshape=box -o VideoPlayer.png
 
@@ -446,7 +428,3 @@ dot -Tpng summary.dot -Gdpi=600 -Nfontname="Open Sans" `
 VideoPlayer: macOS
 dot -Tpng summary.dot -Gdpi=600 -Nfontname="Open Sans" \
    -Nshape=box -o VideoPlayer.png
-
-
-
-

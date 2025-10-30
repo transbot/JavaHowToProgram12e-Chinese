@@ -1,4 +1,4 @@
-// 图21.13: Time1Test.java
+// 图21.5: Time1Test.java
 // 在应用程序中使用Time1对象
 package com.deitel.timetest;
 

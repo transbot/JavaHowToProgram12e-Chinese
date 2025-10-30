@@ -1,4 +1,4 @@
-// 图21.6: Welcome.java
+// 图21.1: Welcome.java
 // 将放置到模块中的Welcome类
 package com.deitel.welcome; // 模块中的所有类都必须打包
 

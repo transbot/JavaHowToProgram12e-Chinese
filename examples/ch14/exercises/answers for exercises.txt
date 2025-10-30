@@ -1,0 +1,82 @@
+14.4  Fill in the blanks
+a) 管道
+b) 外部
+c) 不变
+d) Consumer<T>
+e) Supplier<T>
+f) 数据
+g) filter
+h) 收集器
+i) 终端
+j) splitAsStream
+k) 抽象，default，private
+
+14.5
+a) 错误。中间操作（如filter, map）之所以高效，主要原因是惰性求值，即它们在终端操作被调用前不会实际执行。但它们在调用链中确实会返回一个新的流。
+b) 错误。归约操作（如reduce, sum, collect）将流中的所有元素汇集成一个最终结果，这个结果通常是单个值或一个集合，而不是一个新的流。
+c) 错误。这两个方法的描述正好说反了。
+   IntStream.range(start, end)方法生成一个不包含end的序列（即[start, end)）。
+   IntStream.rangeClosed(start, end)方法生成一个包含end的序列（即[start, end]）。Closed可以理解为闭区间。
+d) 正确。Files类提供了如lines()、list()和walk()等方法来直接生成流
+e) 正确。要从Map获取流，必须先调用其keySet()、values()或entrySet()方法得到一个Set或Collection，然后再对这个集合调用.stream()方法。
+f) 错误。compose是默认方法。
+g) 正确。这解决了因继承多个同名默认方法而产生的“菱形问题”（diamond problem）。类必须显式重写该方法以消除歧义，告诉编译器到底该使用哪个实现。
+
+14.6
+a) 显式列出参数类型的Lambda表达式
+   (double a, double b) -> { return a * b; }
+b) 不列出参数类型的Lambda 表达式
+   (a, b) -> { return a * b; }
+c) 隐式返回值的Lambda表达式
+   (a, b) -> a * b
+d) ArrayList类的构造方法引用
+   ArrayList::new
+
+14.7
+list.stream()                               // 1. 获取Stream<Integer>，一个由Integer对象组成的流
+    .filter(value -> value % 2 != 0)        // 2. 筛选出奇数，返回Stream<Integer>
+    .mapToInt(Integer::intValue)            // 3. 将Stream<Integer>转换为IntStream
+    .sum();                                 // 4. 现在可以在 IntStream 上正确调用 sum()
+
+或者（需反复拆箱，不建议）：
+list.stream()                               // 1. 获取Stream<Integer>，一个由Integer对象组成的流
+    .filter(value -> value % 2 != 0)        // 2. 筛选出奇数，返回的仍是Stream<Integer>
+    .reduce(0, Integer::sum);               // 3. 进行归约操作：
+                                            //    - 第一个参数0是初始值或单位值 (identity)
+                                            //    - 第二个参数Integer::sum是累加器(accumulator)，它会将当前累加结果与流中下一个元素相加
+
+14.8 参见上一题的答案
+14.9  
+这个流管道的功能是模拟生成一百万个随机数（这些数只可能是1或2），然后统计数字1和数字2各自出现的总次数，最后将统计结果格式化输出到控制台。
+1. random.ints(1000000, 1, 3)：生成原始整数流
+作用： 这是流的源头。它调用RandomGenerator对象的ints方法来创建一个包含大量随机整数的流。
+参数：
+1000000: 指定了流中将包含一百万个元素。
+1: 指定了随机数的下限（包含1）。
+3: 指定了随机数的上限（不包含3）。
+结果： 这一步会生成一个IntStream，这是一个专门处理原始类型int的流。流中的一百万个数字只会是1或2。
+
+2. .boxed()：装箱操作
+作用：这是一个中间操作，它将IntStream（原始类型int的流）转换为Stream<Integer>（Integer对象的流）。
+原因：后续的.collect()操作是一个泛型方法，它需要处理的是对象流（Stream<T>），而不是原始类型流。因此，必须先通过boxed()将每个int“装箱”成一个Integer对象。
+
+3.和4.
+.collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))：收集与分组计数
+作用：这是一个终端操作，它会触发前面所有惰性操作的执行，并将流中的元素收集到一个Map中。
+Collectors.groupingBy(...) 是一个强大的收集器，用于将元素分组。它有两个关键参数：
+第一个参数Function.identity(): 这是分类器。Function.identity()是一个简写，等同于Lambda表达式number -> number。它告诉groupingBy按照元素自身的值来进行分组。因此，所有值为1的Integer对象会被分到一组，所有值为2的会被分到另一组。分组后的Map的键（key）就是这些数值（1和2）。
+第二个参数Collectors.counting(): 这是下游收集器。它会被应用到每一个分组上，作用是统计该组内有多少个元素。计算的结果（一个Long类型的值）将成为Map的值（value）。
+结果：这一步执行完毕后，会生成一个Map<Integer, Long>。这个Map的结构大致如下（具体数值每次运行都会不同）：
+{1=499850, 2=500150}
+其中，键1和2代表不同的分组，值代表每个数字在一百万次生成中出现的频率。
+5. 和 6.
+.forEach(...)：遍历并打印结果
+作用：在.collect()操作完成后，我们得到了一个Map。.forEach()是Map接口的方法，用于遍历这个Map的每一个条目。
+参数 (side, frequency) -> ...: 这是一个Lambda表达式。在遍历Map时，每个条目的键（Key）会被赋给变量side，值（Value）会被赋给变量frequency。
+System.out.printf(...): 这是为每个Map条目执行的操作。它使用格式化字符串将键和值打印出来。
+%-6d: 打印第一个整数（side），左对齐，占6个字符宽度。
+%d: 打印第二个长整数（frequency）。
+%n: 输出一个换行符。
+结果： 控制台会输出类似下面的内容：
+1     499850
+2     500150
