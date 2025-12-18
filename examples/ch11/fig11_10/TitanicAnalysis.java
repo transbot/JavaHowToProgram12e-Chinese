@@ -34,7 +34,7 @@ public class TitanicAnalysis {
       // 将数据集加载到TitanicRecord对象列表中
       List<TitanicRecord> titanic = iterator.readAll();
 
-      // 创建理表，用正确的类型代表每一列
+      // 创建列表，用正确的类型代表每一列
       var survived = new ArrayList<String>();
       var sex = new ArrayList<String>();
       var age = new ArrayList<Double>();

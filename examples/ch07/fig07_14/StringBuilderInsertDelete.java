@@ -10,7 +10,7 @@ public class StringBuilderInsertDelete {
       char characterValue = 'K';
       int integerValue = 7;
       long longValue = 10000000;
-      float floatValue = 2.5f; // f后续表明2.5是一个float
+      float floatValue = 2.5f; // f后缀表明2.5是一个float
       double doubleValue = 33.333;
 
       var buffer = new StringBuilder();
